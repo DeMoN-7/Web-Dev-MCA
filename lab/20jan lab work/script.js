@@ -5,7 +5,7 @@ if (age){
     alert("Adult")
 }
 else{
-    alert("Under 18")
+    alert("Under 60")
     console.log("hello ji")
 }
 document.write("your gender:",gender)
