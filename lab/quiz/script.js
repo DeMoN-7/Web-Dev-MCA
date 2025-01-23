@@ -12,17 +12,16 @@ function createTimer(){
     const timm = document.querySelector(".timer");
     let countdown = 5; // Start countdown at 5 seconds
 
-    // Clear existing content and display initial countdown
     timm.textContent = `Timer: ${countdown} seconds`;
 
     // Use setInterval for a countdown effect
     const interval = setInterval(() => {
-        countdown--; // Decrease countdown by 1
+        countdown--; 
         timm.textContent = `Timer: ${countdown} seconds`;
 
         if (countdown <= 0) {
             clearInterval(interval); // Stop the timer when it reaches 0
-            myGreeting(); // Call the greeting function
+            myGreeting(); 
         }
     }, 1000);
 }
@@ -31,4 +30,4 @@ function myGreeting(){
 }
 
 generateRandomQuestion();
-createTimer();
+// createTimer();
