@@ -8,6 +8,11 @@ h1{
     color: #3c3c3c;
     margin-left: 45%;
 }
+.timer{
+    color: red;
+    margin-left: 40%;
+    font-size: 5vh;
+}
 .main{
     height: 100vh;
     display: flex;
@@ -31,18 +36,19 @@ h1{
 
 }
 .question{
-    border-radius: 20%;
-    height: 25%;
-    width: 70%;
-    border: 2px solid black;
+    
+    height: 5%;
+    width: 20%;
+    color: #D8C9AE;
     margin-bottom: auto;
     padding: 10%;
+    font-size: 200%;
 
 }
 .option{
     border: 2px solid black;
     width: 75%;
-    height: 70%;
+    height: 65%;
     border-radius: 20%;
     padding: 10%;
 }
