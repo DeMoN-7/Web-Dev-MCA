@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    height: 100vh;
+    height: 80vh;
     background-color: #D8C9AE;
 
 }
@@ -26,7 +26,7 @@ h1{
     background-color: #575757;
     border-radius: 20%;
     color: whitesmoke;
-    height: 70%;
+    height: 60%;
     width: 35%;
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@ h1{
 
 }
 .question{
-    
+    border: 2px solid black;
     height: 5%;
     width: 20%;
     color: #D8C9AE;
@@ -45,16 +45,25 @@ h1{
     font-size: 200%;
 
 }
-input,label{
+input{
 
     font-size: 30px;
     height: 30px;
     width: 100px;
 }
+label{
+    font-size: 30px;
+    height: 30px;
+    width: 100px;
+}
 .option{
+    border:2px solid black;
     margin-top: 20%;
-    display:grdi;
     width: 75%;
     height: 65%;
     padding: 10%;
+}
+button{
+    background-color: aquamarine;
+    font-size: larger;
 }
