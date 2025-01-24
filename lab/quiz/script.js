@@ -46,6 +46,16 @@ function createTimer() {
 function myGreeting() {
   alert("Time over You looser");
 }
-
+function check(correctAnswer, answer ){
+  if (correctAnswer==answer){
+    generateRandomQuestion();
+  }
+  else{
+    alert("Wrong answer");
+  }
+}
+function submit(){
+  
+}
 generateRandomQuestion();
 // createTimer();
