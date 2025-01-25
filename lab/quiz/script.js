@@ -82,7 +82,7 @@ function resetTimer() {
       clearInterval(countdownInterval); // Stop the timer
       console.log("Timer ran out. Generating a new question.");
       alert("Time over! You lose.");
-      generateRandomQuestion(); // Load a new question
+      // generateRandomQuestion(); // Load a new question
     }
   }, 1000);
 }

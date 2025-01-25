@@ -36,7 +36,7 @@ h1{
 
 }
 .question{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     height: 5%;
     width: 20%;
     color: #D8C9AE;
@@ -57,13 +57,15 @@ label{
     width: 100px;
 }
 .option{
-    border:2px solid black;
+    /* border:2px solid black; */
     margin-top: 20%;
     width: 75%;
     height: 65%;
     padding: 10%;
 }
 button{
-    background-color: aquamarine;
-    font-size: larger;
+    background-color: transparent;
+    color: wheat;
+    box-shadow: #D8C9AE;
+    font-size: 3vh;
 }
