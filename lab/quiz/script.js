@@ -96,7 +96,8 @@ function check(correctAnswer, selectedValue) {
     alert("Correct answer");
     generateRandomQuestion(); // Load a new question
   } else {
-    alert("Wrong answer");
+    alert("Wrong Answer Redirecting to home page");
+    window.location.href="mainPage.html";
   }
 }
 
@@ -115,13 +116,12 @@ function submit() {
 
   if (selectedValue !== null) {
     console.log("Valid Option Selected:", selectedValue);
-    check(corr, selectedValue); // Compare with the correct answer
+    check(corr, selectedValue); 
   } else {
     alert("Please select an option!"); // Handle no selection case
     console.log("No option selected.");
   }
 
-  // The timer does not stop here; it resets with the new question
 }
 
 // Start the first question
