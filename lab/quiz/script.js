@@ -1,6 +1,6 @@
 let corr = 0;
 let countdownInterval = null; // Global variable to track the timer interval
-
+let points=null;
 function generateRandomQuestion() {
   console.log("Generating a new question...");
 
@@ -94,6 +94,7 @@ function check(correctAnswer, selectedValue) {
 
   if (correctAnswer === selectedValue) {
     alert("Correct answer");
+    points++;
     generateRandomQuestion(); // Load a new question
   } else {
     alert("Wrong Answer Redirecting to home page");
