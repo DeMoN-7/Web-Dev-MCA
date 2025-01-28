@@ -1,10 +1,14 @@
 let corr = 0;
-let countdownInterval = null; // Global variable to track the timer interval
-let points=null;
+let countdownInterval = null;
+let points = 0;
+
+// Initialize the game by generating the first question
+generateRandomQuestion();
+
 function generateRandomQuestion() {
   console.log("Generating a new question...");
 
-  // Generate two random numbers
+  // Generate two random numbers and an operator
   const num1 = Math.floor(Math.random() * 100);
   const num2 = Math.floor(Math.random() * 100) + 1; // Avoid division by zero
   const ops = ["+", "-", "*", "/"];
@@ -13,9 +17,8 @@ function generateRandomQuestion() {
   // Display the question
   const ques = document.querySelector(".question");
   ques.textContent = `${num1} ${operator} ${num2}`;
-  console.log(`New Question: ${num1} ${operator} ${num2}`);
 
-  // Evaluate the correct answer
+  // Compute the correct answer
   let correctAnswer;
   switch (operator) {
     case "+":
@@ -32,82 +35,72 @@ function generateRandomQuestion() {
       break;
   }
 
-  corr = correctAnswer; // Update the global variable
-  console.log("Correct Answer Set:", corr);
+  corr = correctAnswer;
+  console.log(`New Question: ${num1} ${operator} ${num2}, Answer: ${corr}`);
 
-  // Generate options
-  const options = [
-    correctAnswer,
-    correctAnswer + 3,
-    correctAnswer + 1,
-    correctAnswer - 3,
-  ];
-
-  // Shuffle the options
+  // Generate and shuffle options
+  const options = [correctAnswer, correctAnswer + 3, correctAnswer + 1, correctAnswer - 3];
   options.sort(() => Math.random() - 0.5);
 
-  // Update radio button labels and values
+  // Update the radio button labels and values
   const labels = document.querySelectorAll("label");
   const radios = document.querySelectorAll('input[name="options"]');
   for (let i = 0; i < options.length; i++) {
     labels[i].textContent = options[i];
     radios[i].value = options[i];
-    radios[i].checked = false; // Uncheck all radios
+    radios[i].checked = false;
   }
-  console.log("Options Updated:", options);
 
-  // Reset the timer
   resetTimer();
 }
 
 function resetTimer() {
-  console.log("Resetting the timer...");
   const timm = document.querySelector(".timer");
-  let countdown = 10; // Start countdown at 10 seconds
+  let countdown = 10;
 
-  // Clear any existing timer
   if (countdownInterval) {
     clearInterval(countdownInterval);
-    console.log("Cleared existing timer.");
   }
 
-  // Display the timer and start counting down
   timm.textContent = `Timer: ${countdown} seconds`;
+
   countdownInterval = setInterval(() => {
     countdown--;
     timm.textContent = `Timer: ${countdown} seconds`;
-    console.log("Timer Countdown:", countdown);
 
     if (countdown <= 0) {
-      clearInterval(countdownInterval); // Stop the timer
-      console.log("Timer ran out. Generating a new question.");
-      alert("Time over! You lose.");
-      // generateRandomQuestion(); // Load a new question
+      clearInterval(countdownInterval);
+      alert("Time over! Generating a new question.");
+      points=0;
+      updatePointsDisplay();
+      generateRandomQuestion(); 
     }
   }, 1000);
 }
 
 function check(correctAnswer, selectedValue) {
-  console.log("Checking answer...");
-  console.log("Correct Answer:", correctAnswer);
-  console.log("Selected Value:", selectedValue);
-
   if (correctAnswer === selectedValue) {
-    alert("Correct answer");
+    alert("Correct answer!");
     points++;
-    generateRandomQuestion(); // Load a new question
+    updatePointsDisplay();
+    generateRandomQuestion();
   } else {
-    alert("Wrong Answer Redirecting to home page");
-    window.location.href="mainPage.html";
+    alert("Wrong answer! Redirecting to the home page.");
+    points = 0;
+    updatePointsDisplay();
+    window.location.href = "mainPage.html";
   }
 }
 
+function updatePointsDisplay() {
+  const pointsDisplay = document.querySelector(".points-display");
+  pointsDisplay.textContent = `Points: ${points}`;
+}
+
 function submit() {
-  console.log("Submit button clicked.");
   const radios = document.querySelectorAll('input[name="options"]');
   let selectedValue = null;
 
-  // Check which radio button is selected
   for (const radio of radios) {
     if (radio.checked) {
       selectedValue = Number(radio.value);
@@ -116,14 +109,11 @@ function submit() {
   }
 
   if (selectedValue !== null) {
-    console.log("Valid Option Selected:", selectedValue);
-    check(corr, selectedValue); 
+    check(corr, selectedValue);
   } else {
-    alert("Please select an option!"); // Handle no selection case
-    console.log("No option selected.");
+    alert("Please select an option!");
+    point=0;
+    updatePointsDisplay();
+    generateRandomQuestion();
   }
-
 }
-
-// Start the first question
-generateRandomQuestion();

@@ -80,3 +80,13 @@ button{
   color: rgb(205, 173, 113);
   font-size: 3vh;
 }
+.points-display {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #f8f9fa;
+  padding: 5px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
