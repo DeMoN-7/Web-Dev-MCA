@@ -1,0 +1,18 @@
+.main{
+
+    background-color: blanchedalmond;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#box{
+    /* display: flex; */
+    height: 5vh;
+    width: 5vh;
+    border: 2px solid black;
+}
+
+.box1{
+    border-left: 0;
+    border-top: 0;
+}
