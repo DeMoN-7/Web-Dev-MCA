@@ -39,7 +39,12 @@ function generateRandomQuestion() {
   console.log(`New Question: ${num1} ${operator} ${num2}, Answer: ${corr}`);
 
   // Generate and shuffle options
-  const options = [correctAnswer, correctAnswer + 3, correctAnswer + 1, correctAnswer - 3];
+  const options = [
+    correctAnswer,
+    correctAnswer + 3,
+    correctAnswer + 1,
+    correctAnswer - 3,
+  ];
   options.sort(() => Math.random() - 0.5);
 
   // Update the radio button labels and values
@@ -71,9 +76,9 @@ function resetTimer() {
     if (countdown <= 0) {
       clearInterval(countdownInterval);
       alert("Time over! Generating a new question.");
-      points=0;
+      points = 0;
       updatePointsDisplay();
-      generateRandomQuestion(); 
+      generateRandomQuestion();
     }
   }, 1000);
 }
@@ -112,7 +117,7 @@ function submit() {
     check(corr, selectedValue);
   } else {
     alert("Please select an option!");
-    point=0;
+    point = 0;
     updatePointsDisplay();
     generateRandomQuestion();
   }
