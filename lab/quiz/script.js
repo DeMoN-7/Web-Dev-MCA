@@ -8,9 +8,22 @@ generateRandomQuestion();
 function generateRandomQuestion() {
   console.log("Generating a new question...");
 
-  // Generate two random numbers and an operator
-  const num1 = Math.floor(Math.random() * 100);
-  const num2 = Math.floor(Math.random() * 100) + 1; // Avoid division by zero
+  // Generate two random numbers based on the points level
+  let num1, num2;
+  if (points < 5) {
+    num1 = Math.floor(Math.random() * 10);
+    num2 = Math.floor(Math.random() * 10) + 1;
+  } else if (points < 10) {
+    document.body.style.backgroundImage="url('res/bg3.gif')";
+    num1 = Math.floor(Math.random() * 50);
+    num2 = Math.floor(Math.random() * 50) + 1;
+  } else {
+    document.body.style.backgroundImage="url('res/bg8.gif')";
+    num1 = Math.floor(Math.random() * 100);
+    num2 = Math.floor(Math.random() * 100) + 1;
+  }
+
+  // Generate a random operator
   const ops = ["+", "-", "*", "/"];
   const operator = ops[Math.floor(Math.random() * ops.length)];
 
@@ -31,7 +44,7 @@ function generateRandomQuestion() {
       correctAnswer = num1 * num2;
       break;
     case "/":
-      correctAnswer = Math.floor(num1 / num2);
+      correctAnswer = num1 % num2 === 0 ? num1 / num2 : Math.floor(num1 / num2);
       break;
   }
 
@@ -117,7 +130,7 @@ function submit() {
     check(corr, selectedValue);
   } else {
     alert("Please select an option!");
-    point = 0;
+    points = 0;
     updatePointsDisplay();
     generateRandomQuestion();
   }

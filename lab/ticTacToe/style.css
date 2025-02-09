@@ -1,18 +1,56 @@
+body{
+    height: 100vh;
+    overflow: hidden;
+}
+.screen{
+    height: 100%;
+    background-color: rgb(205, 161, 95);
+    
+}
 .main{
 
-    background-color: blanchedalmond;
+    /* background-color: rgb(205, 161, 95); */
     display:flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+}
+#box:hover{
+    background-color: red;
+    font-size: 30px;
 }
 #box{
+    display:flex;
+    justify-content: center;
+    align-items: center;
     /* display: flex; */
-    height: 5vh;
-    width: 5vh;
-    border: 2px solid black;
+    height: 10vh;
+    width: 10vh;
+    padding: 2px;
+    /* margin-left: 2px; */
+    /* border: 2px solid black; */
 }
 
-.box1{
-    border-left: 0;
-    border-top: 0;
+.layer1{
+    border-color: black;
+    border-style: solid;
+    border-left: 2px;
+    border-top: 0px;
+    border-bottom: 0cap;
+}
+.layer2{
+    border-color: black;
+    border-style: solid;
+    border-left: 2px;
+    border-top: 0px;
+    border-bottom: 0cap;
+}
+.box1,.box2,.box4,.box5,.box7,.box8{
+    
+    border-color: black;
+    border-style: solid;
+    /* border-bottom: 2px; */
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
 }
