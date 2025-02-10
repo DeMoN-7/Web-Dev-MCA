@@ -10,10 +10,10 @@ function generateRandomQuestion() {
 
   // Generate two random numbers based on the points level
   let num1, num2;
-  if (points < 5) {
+  if (points < 2) {
     num1 = Math.floor(Math.random() * 10);
     num2 = Math.floor(Math.random() * 10) + 1;
-  } else if (points < 10) {
+  } else if (points < 4) {
     document.body.style.backgroundImage="url('res/bg3.gif')";
     num1 = Math.floor(Math.random() * 50);
     num2 = Math.floor(Math.random() * 50) + 1;
