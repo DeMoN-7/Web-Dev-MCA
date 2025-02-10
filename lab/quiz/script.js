@@ -1,31 +1,39 @@
 let corr = 0;
 let countdownInterval = null;
 let points = 0;
-
+let size=4;
+// let eq=`${num1} ${operator} ${num2}`;
 // Initialize the game by generating the first question
 generateRandomQuestion();
 
 function generateRandomQuestion() {
   console.log("Generating a new question...");
 
-  // Generate two random numbers based on the points level
+  // Generate random numbers based on the points level
   let num1, num2;
-  if (points < 2) {
+  if (points < 1) {
     num1 = Math.floor(Math.random() * 10);
     num2 = Math.floor(Math.random() * 10) + 1;
-  } else if (points < 4) {
+    size=4;
+  } else if (points < 2 ) {
     document.body.style.backgroundImage="url('res/bg3.gif')";
     num1 = Math.floor(Math.random() * 50);
     num2 = Math.floor(Math.random() * 50) + 1;
+    size=4;
   } else {
+
     document.body.style.backgroundImage="url('res/bg8.gif')";
-    num1 = Math.floor(Math.random() * 100);
-    num2 = Math.floor(Math.random() * 100) + 1;
+    num1 = Math.floor(Math.random() * 100*points);
+    num2 = Math.floor(Math.random() * 100*points) + 1;
+    size=5;
+
+    
   }
 
   // Generate a random operator
-  const ops = ["+", "-", "*", "/"];
-  const operator = ops[Math.floor(Math.random() * ops.length)];
+  const ops = ["+", "-", "*", "/","%"];
+  const operator = ops[Math.floor(Math.random() * size)];
+  
 
   // Display the question
   const ques = document.querySelector(".question");
@@ -46,6 +54,8 @@ function generateRandomQuestion() {
     case "/":
       correctAnswer = num1 % num2 === 0 ? num1 / num2 : Math.floor(num1 / num2);
       break;
+    case "%":
+      correctAnswer = num1 % num2;
   }
 
   corr = correctAnswer;
