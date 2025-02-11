@@ -4,6 +4,10 @@ body{
     background-color: rgb(205, 161, 95);
 
 }
+h1{
+    margin-left: 45%;
+    
+}
 .screen{
     height: 100%;
     
@@ -16,11 +20,11 @@ body{
     align-items: center;
     height: 100%;
 }
-#box:hover{
+.box:hover{
     background-color: red;
     font-size: 30px;
 }
-#box{
+.box{
     display:flex;
     justify-content: center;
     align-items: center;
@@ -46,7 +50,7 @@ body{
     border-top: 0px;
     border-bottom: 0cap;
 }
-.box1,.box2,.box4,.box5,.box7,.box8{
+#box1,#box2,#box4,#box5,#box7,#box8{
     
     border-color: black;
     border-style: solid;
