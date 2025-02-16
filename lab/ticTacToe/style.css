@@ -16,21 +16,24 @@ h1{
 
     /* background-color: rgb(205, 161, 95); */
     display:flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     height: 100%;
+    position: relative;
 }
 .box:hover{
     background-color: red;
     font-size: 30px;
 }
 .box{
+    font-size: 6vh;
     display:flex;
     justify-content: center;
     align-items: center;
     /* display: flex; */
-    height: 10vh;
-    width: 10vh;
+    height: 15vh;
+    width: 15vh;
     padding: 2px;
     /* margin-left: 2px; */
     /* border: 2px solid black; */
@@ -39,14 +42,14 @@ h1{
 .layer1{
     border-color: black;
     border-style: solid;
-    border-left: 2px;
+    border-left: 3px;
     border-top: 0px;
     border-bottom: 0cap;
 }
 .layer2{
     border-color: black;
     border-style: solid;
-    border-left: 2px;
+    border-left: 3px;
     border-top: 0px;
     border-bottom: 0cap;
 }
@@ -58,4 +61,13 @@ h1{
     border-left: 0px;
     border-top: 0px;
     border-right: 0px;
+}
+.line{
+    background-color: black;
+    height: 5px;
+    width: 45vh;
+    position: absolute;
+    visibility: hidden;
+    transform-origin: center;
+    transition: 0.5s ease-in-out;
 }
