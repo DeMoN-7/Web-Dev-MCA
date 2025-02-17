@@ -4,7 +4,7 @@ let gameOver = new Audio("res/gameOver.mp3");
 let turn = "X";
 let finish=false;
 
-// music.play();
+music.play();
 // function to change the turn from x to o
 const changeTurn = () => {
   return turn === "X" ? "O" : "X";
@@ -87,3 +87,8 @@ document.querySelectorAll(".box").forEach((element) => {
     }
   });
 });
+
+function reset(){
+  location.reload(); 
+
+}
