@@ -1,8 +1,8 @@
 body{
     height: 100vh;
     overflow: hidden;
-    background-color: rgb(205, 161, 95);
-
+    background-color: 	#f8ccf9;
+    
 }
 h1{
     margin-left: 45%;
@@ -23,7 +23,7 @@ h1{
     position: relative;
 }
 .box:hover{
-    background-color: red;
+    background-color: #aaaaaa;
     font-size: 30px;
 }
 .box{
@@ -36,18 +36,18 @@ h1{
     width: 15vh;
     padding: 2px;
     /* margin-left: 2px; */
-    /* border: 2px solid black; */
+    /* border: 2px solid #aaaaaa; */
 }
 
 .layer1{
-    border-color: black;
+    border-color: #aaaaaa;
     border-style: solid;
     border-left: 3px;
     border-top: 0px;
     border-bottom: 0cap;
 }
 .layer2{
-    border-color: black;
+    border-color: #aaaaaa;
     border-style: solid;
     border-left: 3px;
     border-top: 0px;
@@ -55,7 +55,7 @@ h1{
 }
 #box1,#box2,#box4,#box5,#box7,#box8{
     
-    border-color: black;
+    border-color: #aaaaaa;
     border-style: solid;
     /* border-bottom: 2px; */
     border-left: 0px;
@@ -63,7 +63,7 @@ h1{
     border-right: 0px;
 }
 .line{
-    background-color: black;
+    background-color: #aaaaaa;
     height: 5px;
     width: 45vh;
     position: absolute;

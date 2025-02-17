@@ -24,7 +24,7 @@ const checkWin = () => {
     [2, 4, 6], 
   ];
   let line = document.querySelector(".line");
-
+  let won=false;
   winPattern.forEach((e, index) => {
     if (
       textbox[e[0]].innerText === textbox[e[1]].innerText &&
@@ -34,6 +34,7 @@ const checkWin = () => {
       document.querySelector(".turnn").innerText = textbox[e[0]].innerText + " Won";
       finish = true;
       music.pause();
+      won=true;
       // gameOver.play();
 
       // Make the line visible
@@ -56,7 +57,16 @@ const checkWin = () => {
       line.style.left = positions[index].left;
       line.style.transform = `rotate(${positions[index].rotate})`;
     }
+    
   });
+  if (!won) {
+    let allFilled = [...textbox].every(box => box.innerText !== "");
+    if (allFilled) {
+      document.querySelector(".turnn").innerText = "Draw";
+      finish = true;
+      music.pause();
+    }
+  }
 };
 
 // eventlistener for playing turn
