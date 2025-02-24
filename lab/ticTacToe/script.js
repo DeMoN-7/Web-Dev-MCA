@@ -35,7 +35,7 @@ const checkWin = () => {
       finish = true;
       music.pause();
       won=true;
-      // gameOver.play();
+      gameOver.play();
 
       // Make the line visible
       line.style.visibility = "visible";
