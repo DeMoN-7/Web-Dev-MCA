@@ -17,3 +17,8 @@
 // reading data using find function
 
 // db.SalesData.find({price:499});
+// const a=db.SalesData.find({price:499});
+// console.log(a);
+
+
+
